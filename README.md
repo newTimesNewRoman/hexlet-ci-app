@@ -1,5 +1,7 @@
 # Example app for CI Hexlet course
 
+[![Tests & Linter](https://github.com/newTimesNewRoman/hexlet-ci-app/actions/workflows/github-actions.yml/badge.svg)](https://github.com/newTimesNewRoman/hexlet-ci-app/actions/workflows/github-actions.yml)
+
 Starting boilerplate of [Strapi](https://strapi.io/) application
 
 ## System requirements

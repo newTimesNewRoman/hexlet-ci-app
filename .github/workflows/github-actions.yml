@@ -4,14 +4,14 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install app
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: NPM Cache
-      - uses: actions/setup-node@v3
-          with:
-            node-version: 16
-            cache: 'npm'
-      - run: make setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Install app
+        run: make setup
       - name: Running tests
         run: make test
       - name: Running linter

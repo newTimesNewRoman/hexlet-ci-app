@@ -6,8 +6,17 @@ jobs:
     steps:
       - name: Install app
         uses: actions/checkout@v3
+      - name: NPM Cache
+      - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+            cache: 'npm'
       - run: make setup
       - name: Running tests
         run: make test
       - name: Running linter
         run: make lint
+      - name: Run Snyk
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
